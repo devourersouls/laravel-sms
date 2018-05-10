@@ -69,6 +69,11 @@ class SmsRu implements Provider
         return $response->code == self::CODE_OK;
     }
 
+    public function getBalance()
+    {
+        return $this->getClient()->myBalance();
+    }
+
     /**
      * @return SmsRuApi\Api
      */

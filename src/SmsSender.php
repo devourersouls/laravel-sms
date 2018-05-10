@@ -46,6 +46,10 @@ class SmsSender
             $options
         );
     }
+    public function getBridge()
+    {
+        return $this->bridge;
+    }
 
     private function preparePhone($phone)
     {
