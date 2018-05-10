@@ -44,6 +44,8 @@ class SmsRu implements Provider
      */
     public function send($phone, $text, array $options = []) : bool
     {
+        $text = str_replace(' ', '&nbsp;', $text);
+
         $response = $this->getClient()->smsSend(
             new SmsRuApi\Entity\Sms($phone, $text)
         );
